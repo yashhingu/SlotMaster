@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="6000"
+        app:autoTransition="animateToEnd"
+        >
+
+        <!-- Create a circular path for the ivDummy -->
+        <KeyFrameSet>
+            <!-- These key positions create circle points around the center -->
+            <!-- Top point of the circle -->
+            <KeyPosition
+                app:framePosition="0"
+                app:motionTarget="@id/ivDummy"
+                app:keyPositionType="pathRelative"
+                app:percentX="0"
+                app:percentY="-0.05" />
+
+            <!-- Right point of the circle -->
+            <KeyPosition
+                app:framePosition="25"
+                app:motionTarget="@id/ivDummy"
+                app:keyPositionType="pathRelative"
+                app:percentX="0.05"
+                app:percentY="0" />
+
+            <!-- Bottom point of the circle -->
+            <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@id/ivDummy"
+                app:keyPositionType="pathRelative"
+                app:percentX="0"
+                app:percentY="0.05" />
+
+            <!-- Left point of the circle -->
+            <KeyPosition
+                app:framePosition="75"
+                app:motionTarget="@id/ivDummy"
+                app:keyPositionType="pathRelative"
+                app:percentX="-0.05"
+                app:percentY="0" />
+
+            <!-- Back to top point to complete the circle -->
+            <KeyPosition
+                app:framePosition="100"
+                app:motionTarget="@id/ivDummy"
+                app:keyPositionType="pathRelative"
+                app:percentX="0"
+                app:percentY="-0.05" />
+
+            <!-- Add a slight rotation for extra playfulness -->
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@id/ivDummy"
+                android:rotation="3" />
+
+            <KeyAttribute
+                app:framePosition="75"
+                app:motionTarget="@id/ivDummy"
+                android:rotation="-3" />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- Both start and end positions are the same for continuous animation -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/ivDummy"
+            android:layout_width="wrap_content"
+            android:layout_height="330dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/ivDummy"
+            android:layout_width="wrap_content"
+            android:layout_height="330dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnNext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView" />
+    </ConstraintSet>
+</MotionScene>

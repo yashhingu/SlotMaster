@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/iv_bg"
+    tools:context=".ui.slotmaster.SlotMasterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="55dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iv_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCoins"
+            style="@style/MarheyBold20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/coin_back"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="5dp"
+            android:text="Coins: 1000"
+            app:layout_constraintEnd_toStartOf="@+id/ivInfo"
+            app:layout_constraintStart_toEndOf="@+id/ivHome"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/iv_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/clTop"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="55dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSlot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivSlotMaster"
+                    android:layout_width="match_parent"
+                    android:layout_height="440dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/slot_master"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wheel1"
+                    android:layout_width="60dp"
+                    android:layout_height="200dp"
+                    android:layout_marginEnd="12dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/wheel2"
+                    app:layout_constraintEnd_toStartOf="@+id/wheel2"
+                    app:layout_constraintTop_toTopOf="@+id/wheel2"
+                    tools:listitem="@layout/item_slot_wheel" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wheel2"
+                    android:layout_width="60dp"
+                    android:layout_height="200dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                    app:layout_constraintStart_toStartOf="@+id/guideline4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:listitem="@layout/item_slot_wheel" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wheel3"
+                    android:layout_width="60dp"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical"
+                    android:paddingVertical="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="@+id/wheel2"
+                    app:layout_constraintStart_toEndOf="@+id/wheel2"
+                    app:layout_constraintTop_toTopOf="@+id/wheel2"
+                    tools:listitem="@layout/item_slot_wheel" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitleBet"
+                style="@style/MarheyBold20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clSlot"
+                android:layout_centerHorizontal="true"
+                android:scrollbars="vertical"
+                android:text="@string/choose_your_bet"
+                android:textSize="30sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvBets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTitleBet"
+                android:layout_marginTop="22dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingHorizontal="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/rcv_bets" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlay"
+                style="@style/MaterialButtonMarheyBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rcvBets"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="35dp"
+                android:text="@string/play"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Casumo Spin Mastered</string>
+    <string name="intro_1">Welcome to Casumo Spin Mastered! Discover an exciting world where every spin brings new opportunities. Enjoy seamless gameplay, stunning visuals, and thrilling features—all in one place!</string>
+    <string name="next">Next</string>
+    <string name="intro_2">Your Ultimate Slot Adventure Awaits!  Spin, Play, Enjoy! Dive into the action with Slot Master and Fortune Reels—two thrilling slot experiences crafted for your enjoyment.  </string>
+    <string name="settings">Settings</string>
+    <string name="about_us_desc">Welcome to Casumo Spin Mastered – the ultimate destination for slot game enthusiasts! Our app brings together the thrill of spinning reels with exciting features and rewarding gameplay.At Casumo Spin Mastered, we aim to deliver top-tier slot gaming entertainment with stunning visuals, smooth gameplay, and engaging mechanics. Whether you\'re a casual player or a high roller, our diverse selection of slots will keep you coming back for more!</string>
+    <string name="about_us">About us</string>
+    <string name="slot_master">Slot Master</string>
+    <string name="play">Play</string>
+    <string name="bonus">Bonus</string>
+    <string name="fortune_reels">Fortune Reels</string>
+    <string name="win_combo">Win Combo</string>
+    <string name="close">Close</string>
+    <string name="x2_your_bet">= x2 your bet</string>
+    <string name="x7_your_bet">= x7 your bet</string>
+    <string name="x5_your_bet">= x5 your bet</string>
+    <string name="choose_your_bet">Choose your Bet:</string>
+    <string name="_50">50</string>
+    <string name="choose_a_gift_to_open_your_daily_bonus">Choose a gift to open your daily bonus!</string>
+    <string name="coins_x">Coins: %s</string>
+</resources>
